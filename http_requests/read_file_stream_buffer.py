@@ -15,7 +15,7 @@ def read(source: str, destination: str) -> None:
     filename = source.split("/")[-1]
     logging.info(f"making request to {source}")
 
-    res = requests.get(source, stream=True)
+    res = requests.get(source, stream=True, timeout=120)
 
     total_size = res.headers.get('Content-Length')
     total_size = 0 if total_size is None else int(total_size)

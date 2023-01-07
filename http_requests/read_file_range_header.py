@@ -15,7 +15,7 @@ def read(source: str, destination: str) -> None:
     filename = source.split("/")[-1]
     logging.info(f"making request to {source}")
 
-    res = requests.get(source, stream=True)
+    res = requests.get(source, stream=True, timeout=120)
 
     total_size = res.headers.get('Content-Length')
     range_enabled = res.headers.get('Accept-Ranges') == 'bytes'
@@ -41,7 +41,9 @@ def read(source: str, destination: str) -> None:
                 index += 1
 
                 if index % 10 == 0:
-                    logging.info(f"Downloaded: {format_file_sizes(progress)} / {formatted_total_size}")
+                    logging.info(
+                        f"Downloaded: {format_file_sizes(progress)} / {formatted_total_size}"
+                    )
         else:
             chunk_size = 8_192
             for index, data in enumerate(res.iter_content(chunk_size=chunk_size)):
