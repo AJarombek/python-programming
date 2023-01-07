@@ -5,9 +5,10 @@ Date: 1/5/2023
 """
 
 import logging
-import math
 
 import requests
+
+from http_requests.utils import format_file_sizes
 
 
 def read(source: str, destination: str) -> None:
@@ -34,13 +35,3 @@ def read(source: str, destination: str) -> None:
                     logging.info(
                         f"downloaded: {format_file_sizes(progress)} / {format_file_sizes(size)}"
                     )
-
-
-def format_file_sizes(size: int) -> str:
-    if size == 0:
-        return "0 B"
-
-    size_name = ("B", "KB", "MB", "GB", 'TB')
-    index = int(math.floor(math.log(size, 1000)))
-    denominator = math.pow(1000, index)
-    return f"{round(size / denominator, 2)} {size_name[index]}"
