@@ -12,8 +12,8 @@ def double():
     """
     while True:
         value = yield
-        result = value * 2
-        yield result
+        result_value = value * 2
+        yield result_value
 
 
 if __name__ == '__main__':
