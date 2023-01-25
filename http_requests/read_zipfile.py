@@ -24,8 +24,12 @@ def read(source: str, destination: str) -> None:
 
             zipfile_info = archive.getinfo(filename)
             logging.info(f"File compression format: {zipfile_info.compress_type}")
-            logging.info(f"Compressed file size: {format_file_sizes(zipfile_info.compress_size)}")
-            logging.info(f"Uncompressed file size: {format_file_sizes(zipfile_info.file_size)}")
+            logging.info(
+                f"Compressed file size: {format_file_sizes(zipfile_info.compress_size)}"
+            )
+            logging.info(
+                f"Uncompressed file size: {format_file_sizes(zipfile_info.file_size)}"
+            )
 
             with open(f"{destination}/{filename}", "wb") as f:
                 with archive.open(filename, mode="r") as archive_file:

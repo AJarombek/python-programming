@@ -9,7 +9,7 @@ description = "Python Programming Repository"
 authors = ["Andrew Jarombek <andrew@jarombek.com>"]
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "^3.11"
 
 [tool.poetry.dev-dependencies]
 black = "22.10.0"
@@ -21,11 +21,11 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.black]
 skip-string-normalization = true
-target-version = ["py38"]
+target-version = ["py311"]
 
 [tool.pylint.main]
 fail-under = 10.0
-py-version = "3.8"
+py-version = "3.11"
 
 [tool.pylint."messages control"]
 disable = ["logging-fstring-interpolation"]

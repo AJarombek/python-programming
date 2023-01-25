@@ -40,7 +40,7 @@ pylint http_requests
 |------------------|--------------------------------------------------------------------------------|
 | `.run`           | Run configurations to use in the PyCharm IDE.                                  |
 | `coroutines`     | Python code using coroutines.                                                  |
-| `http-requests`  | Python code making HTTP requests.                                              |
+| `http_requests`  | Python code making HTTP requests.                                              |
 | `poetry.lock`    | Lock file containing Python dependencies installed by Poetry.                  |
 | `pyproject.toml` | [Poetry](https://python-poetry.org/) dependency management configuration file. |
 
