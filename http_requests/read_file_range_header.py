@@ -28,6 +28,7 @@ def read(source: str, destination: str) -> None:
         progress = 0
 
         if range_enabled:
+            logging.info("Range header enabled")
             res.close()
             range_length = 1_000_000
             index = 0
@@ -45,6 +46,7 @@ def read(source: str, destination: str) -> None:
                         f"Downloaded: {format_file_sizes(progress)} / {formatted_total_size}"
                     )
         else:
+            logging.info("Range header not enabled")
             chunk_size = 8_192
             for index, data in enumerate(res.iter_content(chunk_size=chunk_size)):
                 progress += len(data)

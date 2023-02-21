@@ -38,6 +38,7 @@ pylint http_requests
 
 | Directory Name   | Description                                                                    |
 |------------------|--------------------------------------------------------------------------------|
+| `.github`        | GitHub Actions for CI/CD pipelines.                                            |
 | `.run`           | Run configurations to use in the PyCharm IDE.                                  |
 | `coroutines`     | Python code using coroutines.                                                  |
 | `http_requests`  | Python code making HTTP requests.                                              |
